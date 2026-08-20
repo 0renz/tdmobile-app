@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/list_tarefa.dart';
+import 'screens/menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: ListaTarefas(),
+      home: Menu(),
     );
   }
 }

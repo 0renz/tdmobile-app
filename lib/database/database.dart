@@ -11,12 +11,25 @@ Future<Database> getDatabase() async {
       'descricao TEXT, '
       'obs TEXT)';
 
+  final String tableSql2 = 
+      'CREATE TABLE cursos('
+      'id INTEGER PRIMARY KEY, '
+      'nome TEXT, '
+      'totalHoras INTEGER)';
+
   return openDatabase(
     path,
     onCreate: (db, version) {
       db.execute(tableSql);
       print('criando tabela $tableSql');
     },
+    onUpgrade: (db, oldVersion, newVersion) {
+      if (oldVersion == 2) {
+        db.execute(tableSql2);
+        print('atualizando tabela $tableSql2');
+      }
+    },
+    onDowngrade: onDatabaseDowngradeDelete,
     version: 1,
   );
 }

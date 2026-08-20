@@ -31,23 +31,25 @@ class _FormTarefaState extends State<FormTarefa> {
         },
         child: const Icon(Icons.save),
       ),
-      body: Form(
-        key: formKey,
-        child: Column(
-          children: <Widget>[
-            Editor(
-              _controladorDescricao,
-              'Descrição',
-              'Informe a descrição da tarefa',
-              Icons.description,
-            ),
-            Editor(
-              _controladorObservacao,
-              'Observação',
-              'Informe a observação da tarefa',
-              Icons.add_card_sharp,
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Form(
+          key: formKey,
+          child: Column(
+            children: <Widget>[
+              Editor(
+                _controladorDescricao,
+                'Descrição',
+                'Informe a descrição da tarefa',
+                Icons.description,
+              ),
+              Editor(
+                _controladorObservacao,
+                'Observação',
+                'Informe a observação da tarefa',
+                Icons.add_card_sharp,
+              ),
+            ],
+          ),
         ),
       ),
     );
