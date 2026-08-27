@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'list_tarefa.dart';
 import 'cep.dart';
 import 'feriados.dart';
+import 'contatos.dart';
 
 class Menu extends StatefulWidget {
   @override
@@ -18,10 +19,11 @@ class MenuState extends State<Menu> {
     return Scaffold(
       body: PageView(
         controller: pc,
-        children: [ListaTarefas(), Cep(), Feriados()],
         onPageChanged: setPaginaAtual,
+        children: [ListaTarefas(), Cep(), Feriados(), Contatos()],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         currentIndex: paginaAtual,
         onTap: (index) {
           setState(() {
@@ -37,6 +39,8 @@ class MenuState extends State<Menu> {
           BottomNavigationBarItem(icon: Icon(Icons.task), label: "Tarefas"),
           BottomNavigationBarItem(icon: Icon(Icons.location_on), label: "CEP"),
           BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: "Feriados"),
+          BottomNavigationBarItem(icon: Icon(Icons.perm_contact_calendar_sharp), label: "Contatos"),
+          BottomNavigationBarItem(icon: Icon(Icons.perm_contact_calendar_sharp), label: "sei la"),
         ],
       ),
     );
