@@ -3,6 +3,7 @@ import 'list_tarefa.dart';
 import 'cep.dart';
 import 'feriados.dart';
 import 'contatos.dart';
+import 'cotacoes.dart';
 
 class Menu extends StatefulWidget {
   @override
@@ -20,7 +21,7 @@ class MenuState extends State<Menu> {
       body: PageView(
         controller: pc,
         onPageChanged: setPaginaAtual,
-        children: [ListaTarefas(), Cep(), Feriados(), Contatos()],
+        children: [ListaTarefas(), Cep(), Feriados(), Contatos(), CotacaoScreen()],
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -40,7 +41,7 @@ class MenuState extends State<Menu> {
           BottomNavigationBarItem(icon: Icon(Icons.location_on), label: "CEP"),
           BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: "Feriados"),
           BottomNavigationBarItem(icon: Icon(Icons.perm_contact_calendar_sharp), label: "Contatos"),
-          BottomNavigationBarItem(icon: Icon(Icons.perm_contact_calendar_sharp), label: "sei la"),
+          BottomNavigationBarItem(icon: Icon(Icons.monetization_on), label: "Moeda"),
         ],
       ),
     );

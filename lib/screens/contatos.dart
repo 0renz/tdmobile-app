@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../model/contato.dart';
-import 'form_contato.dart'; // PRA FAZER AINDA
-import '../database/contatoDao.dart'; // PRA FAZER AINDA
+import 'form_contato.dart';
+import '../database/contatoDao.dart';
 
 class Contatos extends StatefulWidget {
   @override
